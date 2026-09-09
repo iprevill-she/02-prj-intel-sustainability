@@ -61,20 +61,61 @@ header p {
 /* Keep milestone cards in one scrollable row on larger screens. */
 section {
 	display: flex;
-	gap: 24px;
+	gap: 16px;
 	overflow-x: auto;
 	padding: 48px 32px;
 }
 
 section > div {
-	flex: 0 0 300px;
-	padding: 24px;
-	background: linear-gradient(145deg, #ffffff, #d9f1fb);
+	flex: 0 0 240px;
+	position: relative;
+	min-height: 180px;
+	padding: 16px;
+	background:
+		linear-gradient(rgba(0, 20, 45, 0.48), rgba(0, 20, 45, 0.48)),
+		linear-gradient(135deg, #004f91, #00a3d9);
 	border-radius: 8px;
+	color: #ffffff;
+	text-align: center;
 }
 
 section > div:nth-child(even) {
-	background: linear-gradient(145deg, #e5f7fc, #ffffff);
+	background:
+		linear-gradient(rgba(0, 20, 45, 0.48), rgba(0, 20, 45, 0.48)),
+		linear-gradient(135deg, #00a3d9, #004f91);
+}
+
+/* Use compact type so every milestone title and paragraph fits its card. */
+section > div h2 {
+	margin: 0 0 12px;
+	font-size: 28px;
+	line-height: 1.1;
+}
+
+section > div h3 {
+	margin: 0 0 12px;
+	font-size: 20px;
+	line-height: 1.25;
+}
+
+section > div p {
+	position: absolute;
+	inset: 0;
+	display: flex;
+	align-items: center;
+	margin: 0;
+	padding: 20px;
+	background: rgba(0, 20, 45, 0.94);
+	font-size: 16px;
+	line-height: 1.5;
+	overflow-y: auto;
+	opacity: 0;
+	transition: opacity 0.2s ease;
+}
+
+section > div:hover p,
+section > div:focus-within p {
+	opacity: 1;
 }
 
 /* Stack milestone cards when there is not enough room for a row. */
