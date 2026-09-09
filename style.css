@@ -1,1 +1,113 @@
-/* Add your CSS here */
+/* Give the page a clean base so the header fills the viewport width. */
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	font-family: Arial, Helvetica, sans-serif;
+	color: #17202a;
+	background: #f1f3f4;
+}
+
+/* Keep every heading and paragraph inside its parent container. */
+h1,
+h2,
+h3,
+p {
+	max-width: 100%;
+	overflow-wrap: anywhere;
+}
+
+/* Layer a dark overlay over an Intel blue gradient for stronger contrast. */
+header {
+	padding: 48px 40px 56px;
+	background:
+		linear-gradient(rgba(0, 20, 45, 0.48), rgba(0, 20, 45, 0.48)),
+		linear-gradient(135deg, #004f91, #00a3d9);
+	color: #ffffff;
+	text-align: center;
+}
+
+header > div {
+	max-width: 760px;
+	margin: 0 auto;
+}
+
+header img {
+	display: block;
+	width: 210px;
+	height: auto;
+	margin: 0 auto 40px;
+}
+
+h1 {
+	max-width: 680px;
+	margin: 0 auto 24px;
+	font-size: 44px;
+	line-height: 1.1;
+	font-weight: 700;
+}
+
+header p {
+	max-width: 620px;
+	margin: 0 auto;
+	color: #d9f1fb;
+	font-family: Georgia, "Times New Roman", serif;
+	font-size: 19px;
+	line-height: 1.6;
+}
+
+/* Keep milestone cards in one scrollable row on larger screens. */
+section {
+	display: flex;
+	gap: 24px;
+	overflow-x: auto;
+	padding: 48px 32px;
+}
+
+section > div {
+	flex: 0 0 300px;
+	padding: 24px;
+	background: linear-gradient(145deg, #ffffff, #d9f1fb);
+	border-radius: 8px;
+}
+
+section > div:nth-child(even) {
+	background: linear-gradient(145deg, #e5f7fc, #ffffff);
+}
+
+/* Stack milestone cards when there is not enough room for a row. */
+@media (max-width: 768px) {
+	section {
+	flex-direction: column;
+	gap: 24px;
+	padding: 32px 20px;
+	overflow-x: visible;
+	}
+
+	section > div {
+		flex-basis: auto;
+	}
+}
+
+/* Keep the headline and logo comfortable on smaller screens. */
+@media (max-width: 600px) {
+	header {
+		padding: 36px 24px 44px;
+	}
+
+	header img {
+		width: 165px;
+		margin-bottom: 32px;
+	}
+
+	h1 {
+		margin-bottom: 22px;
+		font-size: 34px;
+	}
+
+	header p {
+		font-size: 17px;
+	}
+}
