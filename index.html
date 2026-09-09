@@ -10,6 +10,14 @@
 
   <!-- Header / Hero Section -->
   <header>
+    <nav class="site-nav" aria-label="Main navigation">
+      <a class="site-nav__brand" href="#top">INTEL</a>
+      <div class="site-nav__links">
+        <a href="#timeline">Timeline</a>
+        <a href="#newsletter">Stay informed</a>
+      </div>
+    </nav>
+
     <div>
       <!-- Ask Copilot to teach you about `.svg`. 🙂 You'll need to resize the logo with CSS. -->
       <img src="img/intel-header-logo.svg" alt="Intel Logo" />
@@ -28,7 +36,7 @@
   </header>
 
   <!-- Timeline Cards Section -->
-  <section>
+  <section id="timeline" aria-label="Intel sustainability milestones">
 
     <!-- Card 1: 1968 -->
     <div tabindex="0">
@@ -138,6 +146,25 @@
       </p>
     </div>
   </section>
-  <p>Scroll to view timeline | Hover over cards to learn more!</p>
+
+  <footer id="newsletter">
+    <div class="footer-content">
+      <div>
+        <p class="footer-label">INTEL SUSTAINABILITY</p>
+        <h2>Keep building a more sustainable future.</h2>
+        <p>Get occasional updates about Intel's sustainability progress, goals, and ideas for a more responsible technology industry.</p>
+      </div>
+
+      <form class="newsletter-form" action="#" method="post">
+        <label for="email">Email address</label>
+        <div class="newsletter-form__fields">
+          <input id="email" name="email" type="email" placeholder="you@example.com" required />
+          <button type="submit">Subscribe</button>
+        </div>
+        <small>By subscribing, you agree to receive sustainability updates. You can unsubscribe at any time.</small>
+      </form>
+    </div>
+    <p class="footer-note">© 2026 Intel sustainability timeline</p>
+  </footer>
 </body>
 </html>
